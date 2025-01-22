@@ -27,9 +27,12 @@ async function initApp() {
     },
   });
 
+  // set express app variable!
+  app.set("io", io);
+
   server.listen(PORT, () => console.log("Listening on port", PORT));
 
-  initApi(io, app);
+  initApi(app);
 }
 
 initApp();
