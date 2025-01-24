@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import userReducer from "./user";
+import namespaceReducer from "./namespace";
 
 const store = configureStore({
   reducer: {
     user: userReducer,
+    namespace: namespaceReducer,
   },
 });
 

@@ -3,6 +3,7 @@ import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
 import AuthLayout from "./layouts/AuthLayout";
+import AddNamespacePage from "./pages/AddNamespacePage";
 
 const router = createBrowserRouter([
   {
@@ -12,6 +13,15 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <HomePage />,
+      },
+      {
+        path: "namespace",
+        children: [
+          {
+            path: "create",
+            element: <AddNamespacePage />,
+          },
+        ],
       },
     ],
   },

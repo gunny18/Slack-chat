@@ -20,3 +20,27 @@ export const LoginSchema = z.object({
     .string({ message: "Password is required!" })
     .min(5, { message: "Password must be atleast 4 characters!" }),
 });
+
+export const CreateNamespaceForm = z.object({
+  name: z
+    .string({ message: "Name is required!" })
+    .min(4, { message: "Name must have atleast 4 characters" }),
+  imageURL: z
+    .string({ message: "Image URL is required!" })
+    .url({ message: "Must be a valid URL" }),
+  endpoint: z
+    .string({ message: "endpoint is required!" })
+    .min(4, { message: "endpoint must have atleast 4 characters" }),
+});
+
+export const CreateRoomForm = z.object({
+  name: z
+    .string({ message: "Name is required!" })
+    .min(4, { message: "Name must have atleast 4 characters" }),
+  imageURL: z
+    .string({ message: "Image URL is required!" })
+    .url({ message: "Must be a valid URL" }),
+  namespaceId: z
+    .string({ message: "Namespace ID is required!" })
+    .min(4, { message: "Namespace Id must have atleast 4 characters" }),
+});
